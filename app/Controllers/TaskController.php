@@ -116,7 +116,7 @@ class TaskController extends Controller
         $sql = "UPDATE Tasks SET task_desc= '$task_new_desc', status = '$state', edited = 1 WHERE id='$task_id'";
 
         if (mysqli_query($conn, $sql)) {
-            header('Location:/public/task/index');
+            $this->view->generate('template.php', 'success.php');
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }

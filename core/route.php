@@ -31,17 +31,17 @@ class Route
         $action_name = $action_name;
 
         $model_file = strtolower($model_name).'.php';
-        $model_path = "./app/Models/".$model_file;
+        $model_path = "../app/Models/".$model_file;
         if(file_exists($model_path))
         {
-            include "./app/Models/".$model_file;
+            include "../app/Models/".$model_file;
         }
 
         $controller_file = strtolower($controller_name).'.php';
-        $controller_path = "./app/Controllers/".$controller_file;
+        $controller_path = "../app/Controllers/".$controller_file;
         if(file_exists($controller_path))
         {
-            include "./app/Controllers/".$controller_file;
+            include "../app/Controllers/".$controller_file;
         }
         else
         {

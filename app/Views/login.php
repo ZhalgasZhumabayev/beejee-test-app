@@ -1,24 +1,21 @@
+
+<form action="" method="post" class="loginForm">
 <h1>Страница авторизации</h1>
-<p>
-<form action="" method="post">
-<table class="login">
-	<tr>
-		<th colspan="2">Авторизация</th>
-	</tr>
-	<tr>
-		<td>Логин</td>
-		<td><input type="text" name="login" require></td>
-	</tr>
-	<tr>
-		<td>Пароль</td>
-		<td><input type="password" name="password" require></td>
-	</tr>
-	<th colspan="2" style="text-align: right">
-	<input type="submit" value="Войти" name="btn"
-	style="width: 150px; height: 30px;"></th>
-</table>
+  <div class="form-group">
+    <label for="exampleInputEmail1">UserName</label>
+    <input type="text" name="login" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" name='password' class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-</p>
 
 <?php extract($data); ?>
 <?php if($login_status=="access_granted") { ?>

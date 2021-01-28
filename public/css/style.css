@@ -27,3 +27,9 @@
 .sort-btn {
     float: right;
 }
+
+.loginForm {
+    width: 300px;
+    text-align: center;
+    margin: auto;
+}
