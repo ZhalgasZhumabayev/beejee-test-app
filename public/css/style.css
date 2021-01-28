@@ -1,0 +1,29 @@
+.wrapper {
+    padding: 20px;
+}
+
+.btn-auth {
+    margin: 10px;
+    float: right;
+}
+
+.btn-auth-left {
+    margin: 10px;
+    float: left;
+}
+
+.title {
+    margin: 10px;
+}
+
+.sort-box {
+    width: 250px;
+}
+
+.margin-bottom {
+    margin-bottom: 20px;
+}
+
+.sort-btn {
+    float: right;
+}
