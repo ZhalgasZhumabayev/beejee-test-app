@@ -5,8 +5,9 @@ class Route
 
     static function start()
     {
-        $controller_name = 'Main';
+        $controller_name = 'main';
         $action_name = 'index';
+        $model_name = 'task';
 
         $routes = explode('/', $_SERVER['REQUEST_URI']);
 
@@ -15,19 +16,13 @@ class Route
             $controller_name = $routes[2];
         }
 
-        if ( !empty($routes[3]) )
-        {
-            $sort_name = $routes[3];
-        }
-
         if ( !empty($routes[count($routes) - 1]) )
         {
             $action = explode('?', $routes[count($routes) - 1]);
             $action_name = $action[0];
         }
 
-        $model_name = $controller_name;
-        $controller_name = $controller_name.'Controller';
+        $controller_name = $controller_name.'controller';
         $action_name = $action_name;
 
         $model_file = strtolower($model_name).'.php';
@@ -45,7 +40,7 @@ class Route
         }
         else
         {
-            //Route::ErrorPage();
+            Route::ErrorPage();
         }
 
         $controller = new $controller_name;
@@ -57,7 +52,7 @@ class Route
         }
         else
         {
-            //Route::ErrorPage();
+            Route::ErrorPage();
         }
 
     }

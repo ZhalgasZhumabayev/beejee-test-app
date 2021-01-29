@@ -52,15 +52,16 @@
         <?php
         foreach($data as $row)
         {
-            if ($row['status'] == 0){
-                $state = 'Wait';
-            } else if ($row['edited'] == 1 && $row['status'] == 1) {
+
+            if ($row['edited'] == 1 && $row['status'] == 1) {
                 $state = 'Done and Edited by Admin';
+            } else if ($row['edited'] == 1 && $row['status'] == 0) {
+                $state = 'Wait and Edited by Admin';
+            } else if ($row['status'] == 0){
+                    $state = 'Wait';
             } else if ($row['status'] == 1) {
                 $state = 'Done';
-            } else {
-                $state = 'Edited by Admin';
-            } 
+            }
 
             if ( $_SESSION['admin'] == "123" ) {
                 $edit='<form action="editTask" method="post"><input type="hidden" name="task_id" value="' . $row['id'] . '"><button type="submit" class="btn btn-outline-success">Edit</button></form>';
@@ -109,7 +110,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="public/task/addTask" method="post">
+                <form action="public/task/addTask" method="post" name="addTask">
                     <div class="form-group">
                         <label for="name">Username</label>
                         <input type="name" name="username" class="form-control" id="name" placeholder="User">
