@@ -97,7 +97,7 @@
     <li class="page-item <?php if($params['pg_num'] >= $params['total_pages']){ echo 'disabled'; } ?>">
         <a class="page-link" href="#" onClick="next()">Next</a>
     </li>
-    <li class="page-item"><a class="page-link" href="?pg_num=<?php echo $params['total_pages']; ?>">Last</a></li>
+    <li class="page-item"><a class="page-link" onClick="insertParam('pg_num',<?php echo $params['total_pages']; ?>)">Last</a></li>
 </ul>
 
 <div class="modal fade" id="addTaskModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
