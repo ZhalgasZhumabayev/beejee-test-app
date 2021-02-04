@@ -10,11 +10,7 @@
 </header>
 <div>
     <h1 class="title">Task List</h1>
-    <?php
-        if ( $_SESSION['admin'] == "123" ) {
-            echo '<button type="button" class="btn btn-outline-success btn-auth" data-toggle="modal" data-target="#addTaskModal">Create task</button>';
-        }
-    ?>
+    <button type="button" class="btn btn-outline-success btn-auth" data-toggle="modal" data-target="#addTaskModal">Create task</button>
 
     <div class="form-group sort-box">
         <label for="sortSelect" class="margin-bottom">Sorting</label>
